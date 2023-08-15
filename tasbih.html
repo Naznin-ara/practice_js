@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn{
+            padding:15px 20px;
+            border-radius: 8px;
+            background-color: green;
+            color:white;
+            text-align: center;
+        }
+        .root{
+            display:flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="root">
+        <div id="increment">
+            <h1 id="num">0</h1>
+    <button id="increment-btn" class="btn">  increment</button>
+        
+            
+    <button id="decrement-btn" class="btn" style="background-color: red;">  decrement</button>
+        </div >
+    </div>
+   
+
+    <script>
+        let count = 0;
+        document.getElementById('increment-btn').addEventListener('click', function(){
+          
+           const h1 =document.getElementById('num');
+            count++;
+            
+            h1.innerText = count;
+          
+        })
+        document.getElementById('decrement-btn').addEventListener('click', function(){
+           
+           const h1 =document.getElementById('num');
+            count--;
+            
+            h1.innerText = count;
+          
+        })
+    </script>
+</body>
+</html>

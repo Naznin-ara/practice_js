@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Font changer</title>
+</head>
+<body>
+   <div class="flex flex-row justify-center items-center bg-lime-100 max-w-screen-2xl  min-h-screen gap-8">
+    <div class=" w-[400px] h-[500px] shadow-xl bg-green-200 rounded-lg">
+        <h1 class="text-2xl text-center mt-5 border-b-2 border-b-[#0000001A] pb-5 w-full">Change your font</h1>
+        <div class="flex flex-col justify-center items-center w-full">
+          
+            <label class="w-[80%] text-lg font-semibold "for="">Heading
+                <input type="text" name="" id="heading" class="w-full rounded-lg py-2 px-4">
+            </label>
+        </div>
+        <div class="flex my-3 flex-col justify-center items-center w-full">
+          
+            <label class="w-[80%] text-lg font-semibold "for="">size
+                <input type="range" name="" id="range" class="w-full rounded-lg py-2 px-4" min="0" max="100" step="1px" value="20">
+            </label>
+        </div>
+        <div class="flex my-3 flex-col justify-center items-center w-full gap-4">
+          <h3 class="w-[80%] text-lg font-semibold mb-4">Text align</h3>
+          <div class="flex justify-between items-center gap-4 w-3/4">
+            <label for="align" class="">
+                <input type="radio" name="align" id="align" class="" value="left">left </label>
+                <label for="align" class="">
+                    <input type="radio" name="align" id="align" class="" value="center">center </label>
+                    <label for="" class="">
+                        <input type="radio" name="align" id="align" class="" value="right">right </label>
+             
+          </div>
+          
+          
+        </div>
+        <div class="flex my-3 flex-col justify-center items-center w-full">
+          
+            <label class="w-[80%] text-lg font-semibold "for="">color
+                <input type="color" name="" id="color" class=" mt-4 ">
+            </label>
+        </div>
+    </div>
+    <div id="div2" class="w-[400px] h-[500px] shadow-2xl bg-white rounded ">
+       <h1 class="text-lg font-semibold p-10 text-center" id="newtext"></h1>
+    </div>
+   </div>
+   <script>
+    const heading =document.getElementById('heading');
+    const newtext = document.getElementById('newtext');
+    const size =document.getElementById('range');
+    const align = document.querySelectorAll("#align");
+    const color = document.querySelector("#color");
+    heading.addEventListener('keyup', function(){
+        newtext.innerText = heading.value;
+    })
+    size.oninput = () =>{
+        newtext.style.fontSize = size.value + 'px';
+    };
+
+    align.forEach((item)=>{
+        item.onchange = () =>{
+             newtext.style.textAlign = item.value;
+        }
+    })
+
+    color.addEventListener('input', function(){
+        newtext.style.color = color.value;
+    })
+   </script>
+</body>
+</html>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist</title>
+    <style>
+        body{
+            background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(100,43,115,1) 0%, rgba(4,0,4,1) 90% ); ;
+        }
+     #main{
+        margin: 10px auto;
+        border-radius: 15px;
+        color:white;
+        width: 400px;
+        height : 500px;
+        background-color: rgba(0,0,0,0.2);
+        box-shadow: 0px 0px 20px rgba(255,255,255,0.7);
+     }
+     h1{
+        text-align: center;
+        padding-top: 10px;
+     }
+     #mylist{
+        width:80%;
+        border:none;
+        outline: none;
+        border-radius: 8px;
+        background-color: white;
+        display:block;
+        padding:10px;
+        margin:10px auto;
+     }
+     #btn{
+        background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(237,3,32,0.7) 20.8%, rgba(242,121,1,0.7) 74.4% );
+        color:rgb(255, 255, 255);
+        padding: 10px 40px;
+        border-radius: 5px;
+        border:none;
+        outline: none;
+        display: block;
+        margin:10px auto;
+     }
+    </style>
+</head>
+<body>
+    
+    <div id="main">
+        <h1>To Do list</h1>
+        <div id="main1"></div>
+        <input type="text" id="mylist">
+        <button id="btn">Add</button>
+</div>
+<script>
+    document.getElementById('btn').addEventListener('click', function(){
+        const mylist = document.getElementById('mylist');
+        const main = document.getElementById('main1');
+        const list = document.createElement('h2');
+        list.innerText = mylist.value;
+         main.appendChild(list);
+         main.style.margin = '20px';
+        mylist.value = "";
+
+    })
+</script>
+</body>
+</html>
